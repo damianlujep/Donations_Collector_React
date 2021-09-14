@@ -1,3 +1,4 @@
-body{
-  color: red;
-}
+@import "generic/normalize";
+
+@import "settings/colors";
+@import "settings/fonts";

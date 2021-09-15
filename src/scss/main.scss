@@ -1,4 +1,9 @@
-@import "generic/normalize";
+@import "~normalize-scss/sass/normalize/import-now";
 
 @import "settings/colors";
 @import "settings/fonts";
+
+@import "elements/base";
+@import "elements/buttons";
+
+@import "pages/home";

@@ -1,0 +1,18 @@
+.header-action-btn{
+  height: 36px;
+  width: 90px;
+  padding: 7px 10px;
+  border: none;
+  background-color: white;
+
+  a{
+    color: $color-shadows;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &:hover{
+    border: 0.75px solid $color-call-to-action;
+  }
+}

@@ -1,18 +1,36 @@
-.header-action-btn{
-  height: 36px;
-  width: 90px;
-  padding: 7px 10px;
-  border: none;
-  background-color: white;
+.header-section{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 37px 142px 0 0;
+}
 
-  a{
-    color: $color-shadows;
-    font-size: 13px;
-    font-weight: 400;
-    text-align: center;
-  }
+.nav-section{
+  margin-top: 35px
+}
+
+.header-action-btn{
+  padding: 9px 10px;
+  border: none;
+  color: $color-shadows;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
 
   &:hover{
     border: 0.75px solid $color-call-to-action;
+  }
+}
+
+.nav-btn{
+  padding: 9px 20px;
+  border: none;
+  color: $color-text-basic;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+
+  &:hover{
+    border: 0.75px solid $color-text-basic;
   }
 }

@@ -3,22 +3,38 @@ import {Link} from "react-router-dom";
 
 const HeaderNav = () => {
     return (
-        <div>
-            <button>
-                <Link
-                    to="/logowanie"
-                >
-                    Oddaj rzeczy
-                </Link>
-            </button>
-            <button>
-                <Link
-                    to="/logowanie"
-                >
-                    Zorganizuj zbiórkę
-                </Link>
-            </button>
-        </div>
+        <section className="nav-section">
+            <Link
+                to="/"
+                className="nav-btn"
+            >
+                Start
+            </Link>
+            <Link
+                to="/"
+                className="nav-btn"
+            >
+                O co chodzi?
+            </Link>
+            <Link
+                to="/"
+                className="nav-btn"
+            >
+                O nas
+            </Link>
+            <Link
+                to="/"
+                className="nav-btn"
+            >
+                Fundacja i organizacje
+            </Link>
+            <Link
+                to="/"
+                className="nav-btn"
+            >
+                Kontakt
+            </Link>
+        </section>
     );
 };
 

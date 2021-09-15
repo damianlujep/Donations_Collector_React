@@ -5,24 +5,18 @@ const HeaderActionButtons = () => {
 
     return (
         <div>
-            <button
+            <Link
+                to="/logowanie"
                 className="header-action-btn"
             >
-                <Link
-                    to="/logowanie"
-                >
-                    Zaloguj
-                </Link>
-            </button>
-            <button
+                Zaloguj
+            </Link>
+            <Link
+                to="/rejestracja"
                 className="header-action-btn"
             >
-                <Link
-                    to="/rejestracja"
-                >
-                    Załóż konto
-                </Link>
-            </button>
+                Załóż konto
+            </Link>
         </div>
     );
 };

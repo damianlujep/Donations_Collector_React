@@ -4,10 +4,10 @@ import HeaderNav from "./HeaderNav";
 
 const HomeHeader = () => {
     return (
-        <>
+        <section className="header-section">
             <HeaderActionButtons/>
             <HeaderNav/>
-        </>
+        </section>
     );
 };
 

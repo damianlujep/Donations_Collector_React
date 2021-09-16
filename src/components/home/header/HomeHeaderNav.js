@@ -1,42 +1,62 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link} from "react-scroll";
 
 const HomeHeaderNav = () => {
     return (
-        <section
+        <ul
             className="nav-section-home"
         >
-            <Link
-                to="/"
-                className="nav-btn"
-            >
-                Start
-            </Link>
-            <Link
-                to="/"
-                className="nav-btn"
-            >
-                O co chodzi?
-            </Link>
-            <Link
-                to="/"
-                className="nav-btn"
-            >
-                O nas
-            </Link>
-            <Link
-                to="/"
-                className="nav-btn"
-            >
-                Fundacja i organizacje
-            </Link>
-            <Link
-                to="/"
-                className="nav-btn"
-            >
-                Kontakt
-            </Link>
-        </section>
+            <li>
+                <Link
+                    to="/"
+                    className="nav-btn"
+                    smooth={true}
+                    duration={1000}
+                >
+                    Start
+                </Link>
+            </li>
+            <li>
+                <Link
+                    to="about-it"
+                    className="nav-btn"
+                    smooth={true}
+                    duration={1000}
+                >
+                    O co chodzi?
+                </Link>
+            </li>
+            <li>
+                <Link
+                    to="about-us"
+                    className="nav-btn"
+                    smooth={true}
+                    duration={1000}
+                >
+                    O nas
+                </Link>
+            </li>
+            <li>
+                <Link
+                    to="organizations"
+                    className="nav-btn"
+                    smooth={true}
+                    duration={1000}
+                >
+                    Fundacja i organizacje
+                </Link>
+            </li>
+            <li>
+                <Link
+                    to="contact"
+                    className="nav-btn"
+                    smooth={true}
+                    duration={1000}
+                >
+                    Kontakt
+                </Link>
+            </li>
+        </ul>
     );
 };
 

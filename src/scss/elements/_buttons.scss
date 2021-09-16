@@ -37,5 +37,7 @@
 
   &:hover{
     border: 0.75px solid $color-call-to-action;
+    color: $color-call-to-action;
+    font-weight: 400;
   }
 }

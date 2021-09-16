@@ -9,7 +9,6 @@ const HomeMainSection = () => {
             <img
                 src={mainSectionImage}
                 alt="main-section-img"
-                style={{height:"calc(100vh - 73px - 37px)", width: "50vw", alignSelf:"end"}}
             />
 
             <div
@@ -21,10 +20,12 @@ const HomeMainSection = () => {
                 </h1>
 
                 <Decoration
-                    style={{margin:"25px 0 78px"}}
+                   className="decoration-home"
                 />
 
-                <div style={{width: "674px", display:"flex", justifyContent: "space-around"}}>
+                <div
+                    className="home-main-cta"
+                >
                     <Link
                         to="/logowanie"
                         className="main-action-btn"
@@ -35,7 +36,6 @@ const HomeMainSection = () => {
                     <Link
                         to="/logowanie"
                         className="main-action-btn"
-                        style={{padding: "13px 51px"}}
                     >
                         <span>Zorganizuj</span>
                         <span>zbiórkę</span>

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Home = () => {
+const HomeThreeColumns = () => {
     return (
         <div>
-            Home Test
+
         </div>
     );
 };
 
-export default Home;
+export default HomeThreeColumns;

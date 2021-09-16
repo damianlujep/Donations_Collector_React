@@ -1,0 +1,43 @@
+.header-action-btn{
+  padding: 9px 10px;
+  border: none;
+  color: $color-shadows;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+
+  &:hover{
+    border: 0.75px solid $color-call-to-action;
+  }
+}
+
+.nav-btn{
+  padding: 9px 20px;
+  border: none;
+  color: $color-text-basic;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+
+  &:hover{
+    border: 0.75px solid $color-text-basic;
+  }
+}
+
+.main-action-btn{
+  display: flex;
+  flex-direction: column;
+  padding: 13px 93px;
+  border: 0.75px solid $color-text-basic;
+  color: $color-text-basic;
+  font-size: 36px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:hover{
+    border: 0.75px solid $color-call-to-action;
+    color: $color-call-to-action;
+    font-weight: 400;
+  }
+}

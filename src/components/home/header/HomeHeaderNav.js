@@ -1,9 +1,11 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-const HeaderNav = () => {
+const HomeHeaderNav = () => {
     return (
-        <section className="nav-section">
+        <section
+            className="nav-section-home"
+        >
             <Link
                 to="/"
                 className="nav-btn"
@@ -38,4 +40,4 @@ const HeaderNav = () => {
     );
 };
 
-export default HeaderNav;
+export default HomeHeaderNav;

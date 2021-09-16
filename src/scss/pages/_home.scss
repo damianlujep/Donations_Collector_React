@@ -1,0 +1,22 @@
+.header-section-home{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 37px 142px 0 0;
+}
+
+.nav-section-home{
+  margin-top: 35px
+}
+
+.home-main-section{
+  display: flex;
+
+  .main-section-description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}

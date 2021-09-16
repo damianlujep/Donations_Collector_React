@@ -1,12 +1,14 @@
 import React from 'react';
-import HeaderActionButtons from "./HeaderActionButtons";
-import HeaderNav from "./HeaderNav";
+import HomeHeaderActionButtons from "./HomeHeaderActionButtons";
+import HomeHeaderNav from "./HomeHeaderNav";
 
 const HomeHeader = () => {
     return (
-        <section className="header-section">
-            <HeaderActionButtons/>
-            <HeaderNav/>
+        <section
+            className="header-section-home"
+        >
+            <HomeHeaderActionButtons/>
+            <HomeHeaderNav/>
         </section>
     );
 };

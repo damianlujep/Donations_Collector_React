@@ -1,8 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-const HeaderActionButtons = () => {
-
+const HomeHeaderActionButtons = () => {
     return (
         <div>
             <Link
@@ -21,4 +20,4 @@ const HeaderActionButtons = () => {
     );
 };
 
-export default HeaderActionButtons;
+export default HomeHeaderActionButtons;

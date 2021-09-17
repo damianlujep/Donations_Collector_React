@@ -1,9 +1,11 @@
 import React from 'react';
 import mainSectionImage from "../../../assets/Home-Hero-Image.jpg";
 import {ReactComponent as Decoration } from "../../../assets/Decoration.svg";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 const HomeMainSection = () => {
+    const history = useHistory();
+
     return (
         <section className="home-main-section">
             <img
@@ -27,18 +29,16 @@ const HomeMainSection = () => {
                     className="home-main-cta"
                 >
                     <Link
-                        to="/logowanie"
                         className="main-action-btn"
+                        to="/oddaj-rzeczy"
                     >
-                        <span>Oddaj</span>
-                        <span>rzeczy</span>
+                        Oddaj rzeczy
                     </Link>
                     <Link
-                        to="/logowanie"
                         className="main-action-btn"
+                        to="/oddaj-rzeczy"
                     >
-                        <span>Zorganizuj</span>
-                        <span>zbiórkę</span>
+                        Zorganizuj zbiórkę
                     </Link>
                 </div>
             </div>

@@ -63,3 +63,32 @@
     }
   }
 }
+
+.home-statistics{
+  height: 384px;
+  width: 100%;
+  background-image: url("../../assets/3--Columns-Background.png");
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  article{
+    width: 334px;
+    text-align: center;
+    font-weight: 300;
+
+    span{
+      font-size: 90px;
+    }
+
+    p:first-of-type{
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+
+    p{
+      font-size: 16px;
+    }
+  }
+}

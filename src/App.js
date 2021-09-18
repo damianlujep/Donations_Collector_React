@@ -2,9 +2,9 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from "./components/home/Home";
 import LoginPage from "./components/login/LoginPage";
 import RegistrationPage from "./components/registration/RegistrationPage";
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from "./routers/PrivateRoute";
 import DonationsPage from "./components/donations/DonationsPage";
-import PublicRoute from "./components/PublicRoute";
+import PublicRoute from "./routers/PublicRoute";
 
 function App() {
   return (
@@ -23,9 +23,10 @@ function App() {
                       isAuthenticated={false}
                       component={() => <LoginPage/>}
                   />
-                  <Route
+                  <PublicRoute
                       exact
                       path="/rejestracja"
+                      isAuthenticated={false}
                       component={() => <RegistrationPage/>}
                   />
                   <PrivateRoute

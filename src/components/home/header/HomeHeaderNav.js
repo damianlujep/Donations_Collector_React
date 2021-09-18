@@ -8,7 +8,7 @@ const HomeHeaderNav = () => {
         >
             <li>
                 <Link
-                    to="/"
+                    to="/start"
                     className="nav-btn"
                     smooth={true}
                     duration={1000}

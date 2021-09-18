@@ -5,8 +5,18 @@ import HomeMainSection from "./main-section/HomeMainSection";
 const Home = () => {
     return (
         <>
-            <HomeHeader/>
-            <HomeMainSection/>
+            <section
+                className="main-section-start"
+                id="start"
+            >
+                <div
+                    className="main-section-img"
+                />
+                <div>
+                    <HomeHeader/>
+                    <HomeMainSection/>
+                </div>
+            </section>
         </>
     );
 };

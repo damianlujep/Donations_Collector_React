@@ -46,6 +46,11 @@
     text-align: center;
 
     margin-right: 142px;
+
+    h1{
+      font-size: 36px;
+      font-weight: normal;
+    }
   }
 
   .decoration-home{
@@ -57,7 +62,7 @@
     display: flex;
     justify-content: space-around;
 
-    a:last-of-type{
+    button:last-of-type{
       padding: 13px 51px;
       margin-left: 44px;
     }
@@ -90,5 +95,69 @@
     p{
       font-size: 16px;
     }
+  }
+}
+
+.donation-steps{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 35px;
+
+  h2{
+    font-size: 38px;
+    font-weight: normal;
+  }
+
+  .decoration-home{
+    align-self: center;
+    margin-bottom: 41px;
+  }
+
+  .steps-list{
+    height: 325px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $color-box-bg;
+
+    article{
+      display: flex;
+      flex-direction: column;
+
+      .step-icon{
+        align-self: center;
+        height: 83px;
+        width: 83px;
+        background: url("../../assets/Icon-1.svg") no-repeat;
+        margin-bottom: 30px;
+
+        &.pack{
+          background: url("../../assets/Icon-2.svg") no-repeat;
+        }
+
+        &.search{
+          background: url("../../assets/Icon-3.svg") no-repeat;
+        }
+
+        &.courier{
+          background: url("../../assets/Icon-4.svg") no-repeat;
+        }
+      }
+
+      hr{
+        width: 70px;
+      }
+
+      p:last-of-type{
+        margin-top: 0;
+      }
+    }
+  }
+
+  button{
+    margin-top: 48px;
+    align-self: center;
   }
 }

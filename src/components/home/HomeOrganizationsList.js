@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 import Pagination from "./Pagination";
+import OrganizationsList from "../OrganizationsList";
 
 const HomeOrganizationsList = () => {
     return (
@@ -39,40 +40,7 @@ const HomeOrganizationsList = () => {
                 komu pomagają i czego potrzebują.
             </p>
 
-            <section
-                className="org-list"
-            >
-                <article
-                    className="org-list-item"
-                >
-                    <div>
-                        <h3>Fundacja “Dbam o Zdrowie”</h3>
-                        <p>Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</p>
-                    </div>
-                    <p>ubrania, jedzenie, sprzęt AGD, meble, zabawki</p>
-                </article>
-                <hr/>
-                <article
-                    className="org-list-item"
-                >
-                    <div>
-                        <h3>Fundacja “Dla dzieci”</h3>
-                        <p>Cel i misja: Pomoc dzieciom z ubogich rodzin.</p>
-                    </div>
-                    <p>ubrania, meble, zabawki</p>
-                </article>
-                <hr/>
-                <article
-                    className="org-list-item"
-                >
-                    <div>
-                        <h3>Fundacja “Bez domu”</h3>
-                        <p>Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.</p>
-                    </div>
-                    <p>ubrania, jedzenie, ciepłe koce</p>
-                </article>
-            </section>
-
+            <OrganizationsList/>
             <Pagination/>
 
         </section>

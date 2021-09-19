@@ -6,8 +6,7 @@ const Pagination = () => {
             className="home-org-pagination"
         >
             <button
-                active={true}
-                className="pagination-btn"
+                className="pagination-btn active"
             >
                 1
             </button>

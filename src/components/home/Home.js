@@ -4,6 +4,7 @@ import HomeMainSection from "./main-section/HomeMainSection";
 import HomeThreeColumns from "./HomeThreeColumns";
 import HomeDonationSteps from "./HomeDonationSteps";
 import HomeAboutUs from "./HomeAboutUs";
+import HomeOrganizationsList from "./HomeOrganizationsList";
 
 const Home = () => {
     return (
@@ -24,6 +25,7 @@ const Home = () => {
             <HomeThreeColumns/>
             <HomeDonationSteps/>
             <HomeAboutUs/>
+            <HomeOrganizationsList/>
         </>
     );
 };

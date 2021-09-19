@@ -1,9 +1,9 @@
 import React from 'react';
 import {ReactComponent as Decoration } from "../../../assets/Decoration.svg";
 import {Link, useHistory} from "react-router-dom";
+import MainActionBigButton from "../../buttons/MainActionBigButton";
 
 const HomeMainSection = () => {
-    const history = useHistory();
 
     return (
         <section className="home-main-section">
@@ -22,18 +22,17 @@ const HomeMainSection = () => {
                 <div
                     className="home-main-cta"
                 >
-                    <Link
-                        className="main-action-btn"
-                        to="/oddaj-rzeczy"
-                    >
-                        Oddaj rzeczy
-                    </Link>
-                    <Link
-                        className="main-action-btn"
-                        to="/oddaj-rzeczy"
-                    >
-                        Zorganizuj zbiórkę
-                    </Link>
+                    <MainActionBigButton
+                        textFirstRow="Oddaj"
+                        textSecondRow="rzeczy"
+                        onClickGoTo="/oddaj-rzeczy"
+                    />
+
+                    <MainActionBigButton
+                        textFirstRow="Zorganizuj"
+                        textSecondRow="zbiórkę"
+                        onClickGoTo="/oddaj-rzeczy"
+                    />
                 </div>
             </div>
 

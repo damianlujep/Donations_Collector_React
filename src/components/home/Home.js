@@ -2,6 +2,7 @@ import React from 'react';
 import HomeHeader from "./header/HomeHeader";
 import HomeMainSection from "./main-section/HomeMainSection";
 import HomeThreeColumns from "./HomeThreeColumns";
+import HomeDonationSteps from "./HomeDonationSteps";
 
 const Home = () => {
     return (
@@ -18,11 +19,9 @@ const Home = () => {
                     <HomeMainSection/>
                 </div>
             </section>
-            <section
-                id="about-it"
-            >
-                <HomeThreeColumns/>
-            </section>
+
+            <HomeThreeColumns/>
+            <HomeDonationSteps/>
         </>
     );
 };

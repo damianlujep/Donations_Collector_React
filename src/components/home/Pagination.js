@@ -1,26 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const Pagination = () => {
+const Pagination = ({itemsPerPage, totalItems, paginate}) => {
+    const [activePage, setActivePage] = useState(1);
+    const pageNumbers = [];
+
+    if(totalItems / itemsPerPage > 1){
+        for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
+            pageNumbers.push(i);
+        }
+    } else {
+        paginate(1);
+    }
+
+    const buttonHandler = (pageNumber) => {
+        paginate(pageNumber);
+        setActivePage(pageNumber);
+    }
+
     return (
-        <section
+        <nav
             className="home-org-pagination"
         >
-            <button
-                className="pagination-btn active"
-            >
-                1
-            </button>
-            <button
-                className="pagination-btn"
-            >
-                2
-            </button>
-            <button
-                className="pagination-btn"
-            >
-                3
-            </button>
-        </section>
+            {
+                pageNumbers.map(number => (
+                    <button
+                        key={number}
+                        onClick={() => buttonHandler(number)}
+                        className={(activePage === number ? "pagination-btn active" : "pagination-btn")}
+                    >
+                        {number}
+                    </button>
+                ))
+            }
+        </nav>
     );
 };
 

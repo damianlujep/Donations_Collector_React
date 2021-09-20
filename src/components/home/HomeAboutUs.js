@@ -1,6 +1,5 @@
 import React from 'react';
 import {ReactComponent as Decoration } from "../../assets/Decoration.svg";
-import {ReactComponent as Signature } from "../../assets/Signature.svg";
 
 const HomeAboutUs = () => {
     return (

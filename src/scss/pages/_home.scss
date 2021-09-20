@@ -46,11 +46,6 @@
     text-align: center;
 
     margin-right: 142px;
-
-    h1{
-      font-size: 36px;
-      font-weight: normal;
-    }
   }
 
   .decoration-home{
@@ -104,11 +99,6 @@
   justify-content: center;
   text-align: center;
   margin-top: 35px;
-
-  h2{
-    font-size: 38px;
-    font-weight: normal;
-  }
 
   .decoration-home{
     align-self: center;
@@ -177,11 +167,6 @@
     background-color: $color-box-bg;
     text-align: center;
 
-    h2{
-      font-size: 38px;
-      font-weight: normal;
-    }
-
     p{
       width: 657px;
       font-size: 30px;
@@ -202,5 +187,75 @@
     height: auto;
     background: url("../../assets/People.jpg") no-repeat;
     background-size: cover;
+  }
+}
+
+.home-organizations{
+  margin-top: 40px;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .nav-organizations{
+    width: 792px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  > p{
+    width: 640px;
+    margin-top: 70px;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  .org-list{
+    margin-top: 44px;
+    width: 1344px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .org-list-item{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h3{
+        margin-bottom: 6px;
+      }
+
+      p {
+        margin-top: 0;
+        font-size: 18px;
+        font-weight: 300;
+      }
+
+      div > p{
+        text-align: left;
+      }
+    }
+
+    hr{
+      width: 100%;
+    }
+  }
+
+  .home-org-pagination{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+
+    button{
+      margin-right: 20px;
+
+      &:last-of-type{
+        margin-right: 0;
+      }
+    }
   }
 }

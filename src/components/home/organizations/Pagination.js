@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-const Pagination = ({itemsPerPage, totalItems, paginate}) => {
-    const [activePage, setActivePage] = useState(1);
+const Pagination = ({itemsPerPage, totalItems, activePage, setActivePage, paginate}) => {
     const pageNumbers = [];
 
     if(totalItems / itemsPerPage > 1){

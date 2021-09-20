@@ -1,13 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
-import OrganizationsList from "../OrganizationsList";
+import {ReactComponent as Decoration} from "../../../assets/Decoration.svg";
+import OrganizationsList from "./OrganizationsList";
 
 const HomeOrganizationsList = () => {
     const [currentOrganizationGroup, setCurrentOrganizationGroup] = useState("foundations");
     const [currentGroupList, setCurrentGroupList] = useState(foundationsList);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [activePage, setActivePage] = useState(1);
 
     const navOrgHandler = (currentOrg) => {
-      setCurrentOrganizationGroup(currentOrg);
+        setCurrentOrganizationGroup(currentOrg);
+        setActivePage(1);
+        setCurrentPage(1);
     }
 
     useEffect(() => {
@@ -25,6 +29,23 @@ const HomeOrganizationsList = () => {
             case "local-collector":
                 setCurrentGroupList(localCollectorsList);
                 break;
+        }
+    }
+
+    const renderOrgDescription = (currentGroup) => {
+        switch (currentGroup) {
+            case "foundations":
+                return "W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z " +
+                       "którymi współpracujemy. Możesz sprawdzić czym się zajmują, " +
+                       "komu pomagają i czego potrzebują."
+            case "non-governmental":
+                return  "Organizacje pozarządowe, consectetur adipiscing elit, sed " +
+                        "do eiusmod tempor incididunt ut labore et dolore magna " +
+                        "aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+            case "local-collector":
+                return  "Lokalne zbiórki sit amet, do eiusmod tempor incididunt ut labore " +
+                        "consectetur adipiscing elit ut labore et dolore magna " +
+                        "aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
         }
     }
 
@@ -62,15 +83,18 @@ const HomeOrganizationsList = () => {
             </section>
 
             <p>
-                W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z
-                którymi współpracujemy. Możesz sprawdzić czym się zajmują,
-                komu pomagają i czego potrzebują.
+                {
+                    renderOrgDescription(currentOrganizationGroup)
+                }
             </p>
 
             <OrganizationsList
                 currentGroupList={currentGroupList}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                activePage={activePage}
+                setActivePage={setActivePage}
             />
-
         </section>
     );
 };

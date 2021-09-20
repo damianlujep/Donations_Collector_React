@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
-import Pagination from "./home/Pagination";
+import React from 'react';
+import Pagination from "./Pagination";
 
-const OrganizationsList = ({currentGroupList}) => {
-
-    const [currentPage, setCurrentPage] = useState(1);
+const OrganizationsList = ({currentGroupList, currentPage, setCurrentPage, activePage, setActivePage}) => {
     const itemsPerPage = 3;
 
     //Get current organizations
@@ -35,7 +33,7 @@ const OrganizationsList = ({currentGroupList}) => {
                                 <p>{elem.keywords}</p>
                             </article>
                             {
-                                (index !== currentGroupList.length -1) ? (<hr/>) : false
+                                ((index + 1) % 3 !== 0) ? (<hr/>) : false
                             }
                         </>
                     ))
@@ -45,6 +43,8 @@ const OrganizationsList = ({currentGroupList}) => {
             <Pagination
                 itemsPerPage={itemsPerPage}
                 totalItems={currentGroupList.length}
+                activePage={activePage}
+                setActivePage={setActivePage}
                 paginate={paginate}
             />
         </>

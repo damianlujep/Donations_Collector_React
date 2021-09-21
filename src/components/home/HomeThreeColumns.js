@@ -2,7 +2,9 @@ import React from 'react';
 
 const HomeThreeColumns = () => {
     return (
-        <div className="home-statistics">
+        <div
+            className="home-statistics"
+        >
             <article>
                 <span>10</span>
                 <p>Oddanych worków</p>

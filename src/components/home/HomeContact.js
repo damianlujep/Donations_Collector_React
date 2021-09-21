@@ -1,5 +1,6 @@
 import React from 'react';
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
+import HomeFooter from "./HomeFooter";
 
 const HomeContact = () => {
     return (
@@ -41,6 +42,8 @@ const HomeContact = () => {
                     </button>
                 </form>
             </div>
+
+            <HomeFooter/>
         </section>
     );
 };

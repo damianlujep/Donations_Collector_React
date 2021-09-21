@@ -5,6 +5,7 @@ import HomeThreeColumns from "./HomeThreeColumns";
 import HomeDonationSteps from "./HomeDonationSteps";
 import HomeAboutUs from "./HomeAboutUs";
 import HomeOrganizationsList from "./organizations/HomeOrganizationsList";
+import HomeContact from "./HomeContact";
 
 const Home = () => {
     return (
@@ -26,6 +27,7 @@ const Home = () => {
             <HomeDonationSteps/>
             <HomeAboutUs/>
             <HomeOrganizationsList/>
+            <HomeContact/>
         </>
     );
 };

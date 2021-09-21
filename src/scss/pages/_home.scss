@@ -192,7 +192,6 @@
 
 .home-organizations{
   margin-top: 40px;
-  margin-bottom: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -255,6 +254,116 @@
 
       &:last-of-type{
         margin-right: 0;
+      }
+    }
+  }
+}
+
+.home-contact {
+  position: relative;
+  width: 100%;
+  height: 1026px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+
+  &:before {
+    content: "";
+    background: url("../../assets/Background-Contact-Form.jpg") no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    opacity: 0.20;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    align-items: center;
+    position: relative;
+    margin: 157px 142px 0;
+
+    form {
+      width: 528px;
+      margin-top: 70px;
+      display: flex;
+      flex-direction: column;
+
+      label{
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      input, textarea{
+        margin-top: 12px;
+        resize: none;
+        font-size: 18px;
+        line-height: 24px;
+        outline: 0;
+        border-width: 0 0 0.75px;
+        border-color: $color-text-basic;
+        background: transparent;
+
+        &:focus{
+          border-color: $color-call-to-action
+        }
+
+        &::placeholder{
+          color: $color-placeholder;
+        }
+      }
+
+      .contact-form-user-data{
+        display: flex;
+        justify-content: space-between;
+
+        .form-input-box{
+          display: flex;
+          flex-direction: column;
+
+          input{
+            width: 254px;
+          }
+        }
+      }
+
+      .contact-form-msg {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+      }
+
+      button {
+        margin-top: 44px;
+        align-self: flex-end;
+      }
+    }
+  }
+
+  footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 22px;
+
+    span{
+      font-size: 18px;
+      margin-right: calc(50vw - 102.65px - 80px - 142px - 8px);
+    }
+
+    .footer-media {
+      margin-right: 142px;
+
+      a:first-of-type{
+        margin-right: 20px;
       }
     }
   }

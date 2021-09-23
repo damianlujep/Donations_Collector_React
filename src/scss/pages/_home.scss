@@ -288,6 +288,16 @@
     position: relative;
     margin: 157px 142px 0;
 
+    .success-message{
+      color: $color-success;
+      font-weight: bold;
+      margin: 40px 0 0;
+
+      + form {
+        margin-top: 40px;
+      }
+    }
+
     form {
       width: 528px;
       margin-top: 70px;
@@ -316,6 +326,11 @@
         &::placeholder{
           color: $color-placeholder;
         }
+
+      }
+
+      textarea.error, input.error {
+        border-color: $color-error;
       }
 
       .contact-form-user-data{
@@ -336,6 +351,11 @@
         display: flex;
         flex-direction: column;
         margin-top: 40px;
+      }
+
+      .form-error{
+        color: red;
+        font-size: 11px;
       }
 
       button {

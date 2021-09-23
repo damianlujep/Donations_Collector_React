@@ -32,23 +32,6 @@ const HomeOrganizationsList = () => {
         }
     }
 
-    const renderOrgDescription = (currentGroup) => {
-        switch (currentGroup) {
-            case "foundations":
-                return "W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z " +
-                       "którymi współpracujemy. Możesz sprawdzić czym się zajmują, " +
-                       "komu pomagają i czego potrzebują."
-            case "non-governmental":
-                return  "Organizacje pozarządowe, consectetur adipiscing elit, sed " +
-                        "do eiusmod tempor incididunt ut labore et dolore magna " +
-                        "aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-            case "local-collector":
-                return  "Lokalne zbiórki sit amet, do eiusmod tempor incididunt ut labore " +
-                        "consectetur adipiscing elit ut labore et dolore magna " +
-                        "aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
-        }
-    }
-
     return (
         <section
             className="home-organizations"
@@ -98,6 +81,23 @@ const HomeOrganizationsList = () => {
         </section>
     );
 };
+
+const renderOrgDescription = (currentGroup) => {
+    switch (currentGroup) {
+        case "foundations":
+            return "W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z " +
+                "którymi współpracujemy. Możesz sprawdzić czym się zajmują, " +
+                "komu pomagają i czego potrzebują."
+        case "non-governmental":
+            return  "Organizacje pozarządowe, consectetur adipiscing elit, sed " +
+                "do eiusmod tempor incididunt ut labore et dolore magna " +
+                "aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+        case "local-collector":
+            return  "Lokalne zbiórki sit amet, do eiusmod tempor incididunt ut labore " +
+                "consectetur adipiscing elit ut labore et dolore magna " +
+                "aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+    }
+}
 
 const foundationsList = [
     {

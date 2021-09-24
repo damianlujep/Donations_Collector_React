@@ -310,23 +310,9 @@
       }
 
       input, textarea{
-        margin-top: 12px;
-        resize: none;
+        @include styled-input-border-btm;
         font-size: 18px;
-        line-height: 24px;
-        outline: 0;
-        border-width: 0 0 0.75px;
-        border-color: $color-text-basic;
-        background: transparent;
-
-        &:focus{
-          border-color: $color-call-to-action
-        }
-
-        &::placeholder{
-          color: $color-placeholder;
-        }
-
+        resize: none;
       }
 
       textarea.error, input.error {

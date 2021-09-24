@@ -1,0 +1,38 @@
+.login-section{
+  margin-top: 123px;
+  @include display-flex-helper(column);
+  align-items: center;
+
+  .login-form{
+    margin-top: 67px;
+    width: 385px;
+    height: 235px;
+    background-color: $color-box-bg;
+
+    @include display-flex-helper(column);
+    align-items: center;
+    justify-content: space-evenly;
+
+    .login-field{
+      display: flex;
+      flex-direction: column;
+
+      label{
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      input{
+       @include styled-input-border-btm;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .login-cta-group{
+    width: 504px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

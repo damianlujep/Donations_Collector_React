@@ -1,21 +1,25 @@
 import React from 'react';
-import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 import {useHistory} from "react-router-dom";
+import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 
-const LoginForm = () => {
+const RegistrationForm = () => {
     const history = useHistory();
 
     return (
         <section className="auth-section">
-            <h1>Zaloguj się</h1>
+            <h1>Załóż konto</h1>
             <Decoration/>
-            <form className="auth-form">
+            <form className="auth-form registration">
                 <div className="auth-form-field">
                     <label>Email</label>
                     <input type="text"/>
                 </div>
                 <div className="auth-form-field">
-                    <label>Password</label>
+                    <label>Hasło</label>
+                    <input type="password"/>
+                </div>
+                <div className="auth-form-field">
+                    <label>Powtórz Hasło</label>
                     <input type="password"/>
                 </div>
             </form>
@@ -23,14 +27,14 @@ const LoginForm = () => {
             <div className="auth-cta-group">
                 <button
                     className="auth-cta-btn no-border"
-                    onClick={() => history.push("/rejestracja")}
+                    onClick={() => history.push("/logowanie")}
                 >
-                    Załóż konto
+                    Zaloguj się
                 </button>
-                <button className="auth-cta-btn">Zaloguj się</button>
+                <button className="auth-cta-btn">Załóż konto</button>
             </div>
         </section>
     );
 };
 
-export default LoginForm;
+export default RegistrationForm;

@@ -2,8 +2,10 @@
 
 @import "settings/colors";
 @import "settings/fonts";
+@import "settings/mixins";
 
 @import "elements/base";
 @import "elements/buttons";
 
 @import "pages/home";
+@import "pages/login";

@@ -65,7 +65,8 @@ const HomeContact = () => {
             body: JSON.stringify(contactFormData)
         })
             .then(data => data.json())
-            .then(data => (data.status === "success") ? submitValidData([],true) : submitValidData(data,false))
+            .then(data => (data.status === "success") ?
+                submitValidData([],true) : submitValidData(data,false))
     }
 
     const submitValidData = (data, isDataValid) => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-scroll";
+import {Link as LinkRouter} from "react-router-dom";
 
 const HomeHeaderNav = () => {
     return (
@@ -7,14 +8,12 @@ const HomeHeaderNav = () => {
             className="nav-section-home"
         >
             <li>
-                <Link
-                    to="/start"
+                <LinkRouter
+                    to="/"
                     className="nav-btn"
-                    smooth={true}
-                    duration={1000}
                 >
                     Start
-                </Link>
+                </LinkRouter>
             </li>
             <li>
                 <Link

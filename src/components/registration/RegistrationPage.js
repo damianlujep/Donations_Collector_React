@@ -1,10 +1,13 @@
 import React from 'react';
+import HomeHeader from "../home/header/HomeHeader";
+import RegistrationForm from "./RegistrationForm";
 
 const RegistrationPage = () => {
     return (
-        <div>
-            Tu będzie rejestracja
-        </div>
+        <>
+            <HomeHeader/>
+            <RegistrationForm/>
+        </>
     );
 };
 

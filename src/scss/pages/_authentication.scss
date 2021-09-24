@@ -1,9 +1,9 @@
-.login-section{
+.auth-section{
   margin-top: 123px;
   @include display-flex-helper(column);
   align-items: center;
 
-  .login-form{
+  .auth-form{
     margin-top: 67px;
     width: 385px;
     height: 235px;
@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: space-evenly;
 
-    .login-field{
+    .auth-form-field{
       display: flex;
       flex-direction: column;
 
@@ -29,7 +29,11 @@
     }
   }
 
-  .login-cta-group{
+  .registration{
+    height: 328px;
+  }
+
+  .auth-cta-group{
     width: 504px;
     margin-top: 40px;
     display: flex;

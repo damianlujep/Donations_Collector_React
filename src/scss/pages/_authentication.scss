@@ -25,6 +25,15 @@
       input{
        @include styled-input-border-btm;
         font-size: 16px;
+
+        &.error {
+          border-color: $color-error;
+        }
+      }
+
+      .field-error{
+        color: red;
+        font-size: 11px;
       }
     }
   }

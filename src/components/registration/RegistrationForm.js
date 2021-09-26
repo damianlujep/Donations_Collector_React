@@ -9,27 +9,58 @@ const RegistrationForm = () => {
     const passwordRef =  useRef();
     const rePasswordRef =  useRef();
     const { signup } = useAuth();
-    const [signUpError, setSignUpError] = useState("");
-    const [passwordError, setPasswordError] = useState("");
     const [loading, setLoading] = useState(false);
+    const resetSignUpErrors = () => {
+        return {
+            email: "",
+            passwordMatch:"",
+            passwordLength: "",
+            rePasswordLength:""
+        }
+    }
+
+    const [signUpErrors, setSignUpErrors] = useState(resetSignUpErrors);
+
+    const isEmailValid = (email) => {
+        const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        return regex.test(email);
+    }
+
+    const validateForm = (email, password, rePassword) => {
+        let errorsTemp = {...signUpErrors};
+        errorsTemp.email = !isEmailValid(email) ? "Email nie poprawny" : "";
+        errorsTemp.passwordLength = password.length < 6 ? "Hasło musi mieć co najmniej 6 znaków" : "";
+        errorsTemp.passwordMatch = password !== rePassword ? "Hasła są niezgodne" : "";
+        errorsTemp.rePasswordLength = password.length < 6 ? "Hasło musi mieć co najmniej 6 znaków" : "";
+        setSignUpErrors({...errorsTemp});
+        return Object.values(errorsTemp).every(x => x === "");
+    }
+
+    const renderPasswordErrors = () => signUpErrors.passwordLength ?
+        <p className="field-error">{signUpErrors.passwordLength}</p> :
+        signUpErrors.passwordMatch &&
+        <p className="field-error">{signUpErrors.passwordMatch}</p>;
+
+    const renderEmailError = () => signUpErrors.email && <p className="field-error">{signUpErrors.email}</p>;
+    const renderAPIError = () => signUpErrors.apiError && <p className="field-error">{signUpErrors.apiError}</p>;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (passwordRef.current.value !== rePasswordRef.current.value) {
-            return setPasswordError("Hasła są niezgodne")
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        const rePassword = rePasswordRef.current.value;
+        console.log( "isValid?",validateForm(email,password,rePassword))
+        if (validateForm(email, password,rePassword)) {
+            try {
+                resetSignUpErrors();
+                setLoading(true);
+                await signup(email, password);
+                history.push("/logowanie")
+            } catch {
+                setSignUpErrors(prevState => prevState.apiError = "Nie udało się utworzyć konta, spróbuj później");
+            }
+            setLoading(false);
         }
-
-        try {
-            setPasswordError("");
-            setSignUpError("");
-            setLoading(true);
-            await signup(emailRef.current.value, passwordRef.current.value);
-            history.push("/logowanie")
-        } catch {
-            setSignUpError(["Nie udało się utworzyć konta, spróbuj później "]);
-        }
-
-        setLoading(false);
     }
 
     return (
@@ -43,30 +74,37 @@ const RegistrationForm = () => {
             >
                 <div className="auth-form-field">
                     <label>Email</label>
-                    <input type="text" ref={emailRef} required/>
+                    <input
+                        className={signUpErrors.email && "error"}
+                        type="text"
+                        ref={emailRef}
+                        required
+                    />
+                    {renderEmailError()}
                 </div>
                 <div className="auth-form-field">
                     <label>Hasło</label>
                     <input
-                        className={passwordError && "error"}
+                        className={signUpErrors.passwordLength || signUpErrors.passwordMatch && "error"}
                         type="password"
-                        ref={passwordRef} required
+                        ref={passwordRef}
+                        required
                     />
-                    {passwordError && <p className="field-error">{passwordError}</p>}
+                    {renderPasswordErrors()}
                 </div>
                 <div className="auth-form-field">
                     <label>Powtórz Hasło</label>
                     <input
-                        className={passwordError && "error"}
+                        className={signUpErrors.passwordLength || signUpErrors.passwordMatch && "error"}
                         type="password"
                         ref={rePasswordRef}
                         required
                     />
-                    {passwordError && <p className="field-error">{passwordError}</p>}
+                    {renderPasswordErrors()}
                 </div>
             </form>
 
-            {signUpError && <p className="field-error">{signUpError}</p>}
+            {renderAPIError()}
 
             <div className="auth-cta-group">
                 <button

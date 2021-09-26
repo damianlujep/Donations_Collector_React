@@ -1,6 +1,5 @@
 import React from 'react';
-import {ReactComponent as Decoration } from "../../../assets/Decoration.svg";
-import {Link, useHistory} from "react-router-dom";
+import {ReactComponent as Decoration} from "../../../assets/Decoration.svg";
 import MainActionBigButton from "../../buttons/MainActionBigButton";
 
 const HomeMainSection = () => {

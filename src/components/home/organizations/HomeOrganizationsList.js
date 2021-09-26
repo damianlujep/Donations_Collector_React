@@ -29,6 +29,8 @@ const HomeOrganizationsList = () => {
             case "local-collector":
                 setCurrentGroupList(localCollectorsList);
                 break;
+            default:
+                setCurrentGroupList(foundationsList);
         }
     }
 

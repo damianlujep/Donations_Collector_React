@@ -49,7 +49,6 @@ const RegistrationForm = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const rePassword = rePasswordRef.current.value;
-        console.log( "isValid?",validateForm(email,password,rePassword))
         if (validateForm(email, password,rePassword)) {
             try {
                 resetSignUpErrors();
@@ -57,7 +56,7 @@ const RegistrationForm = () => {
                 await signup(email, password);
                 history.push("/logowanie")
             } catch {
-                setSignUpErrors(prevState => prevState.apiError = "Nie udało się utworzyć konta, spróbuj później");
+                setSignUpErrors(prevState => ({...prevState, apiError: "Nie udało się utworzyć konta, spróbuj później"}));
             }
             setLoading(false);
         }

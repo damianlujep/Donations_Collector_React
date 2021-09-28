@@ -5,11 +5,12 @@ import RegistrationPage from "./components/registration/RegistrationPage";
 import PrivateRoute from "./routers/PrivateRoute";
 import DonationsPage from "./components/donations/DonationsPage";
 import PublicRoute from "./routers/PublicRoute";
+import {AuthProvider} from "./contexts/AuthContext";
 
 function App() {
   return (
-      <>
-          <BrowserRouter>
+      <BrowserRouter>
+          <AuthProvider>
               <Switch>
                   <PublicRoute
                       exact
@@ -26,18 +27,16 @@ function App() {
                   <PublicRoute
                       exact
                       path="/rejestracja"
-                      isAuthenticated={false}
                       component={() => <RegistrationPage/>}
                   />
                   <PrivateRoute
                       exact
                       path="/oddaj-rzeczy"
-                      isAuthenticated={true}
                       component={() => <DonationsPage/>}
                   />
               </Switch>
-          </BrowserRouter>
-      </>
+          </AuthProvider>
+      </BrowserRouter>
   );
 }
 

@@ -15,6 +15,14 @@ export const AuthProvider = ({ children }) => {
         return auth.createUserWithEmailAndPassword(email, password);
     }
 
+    const login = (email, password) => {
+        return auth.signInWithEmailAndPassword(email, password);
+    }
+
+    const logout = () => {
+        return auth.signOut();
+    }
+
     useEffect(() => {
         return auth.onAuthStateChanged(user => {
             setCurrentUser(user);
@@ -25,7 +33,9 @@ export const AuthProvider = ({ children }) => {
 
     const value = {
         currentUser,
-        signup
+        login,
+        signup,
+        logout
     }
 
     return (

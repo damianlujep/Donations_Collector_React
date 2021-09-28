@@ -22,7 +22,7 @@ const RegistrationForm = () => {
     const [signUpErrors, setSignUpErrors] = useState(resetSignUpErrors);
 
     const isEmailValid = (email) => {
-        const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        const regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return regex.test(email);
     }
 
@@ -49,7 +49,6 @@ const RegistrationForm = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const rePassword = rePasswordRef.current.value;
-        console.log( "isValid?",validateForm(email,password,rePassword))
         if (validateForm(email, password,rePassword)) {
             try {
                 resetSignUpErrors();
@@ -57,7 +56,7 @@ const RegistrationForm = () => {
                 await signup(email, password);
                 history.push("/logowanie")
             } catch {
-                setSignUpErrors(prevState => prevState.apiError = "Nie udało się utworzyć konta, spróbuj później");
+                setSignUpErrors(prevState => ({...prevState, apiError: "Nie udało się utworzyć konta, spróbuj później"}));
             }
             setLoading(false);
         }
@@ -85,7 +84,7 @@ const RegistrationForm = () => {
                 <div className="auth-form-field">
                     <label>Hasło</label>
                     <input
-                        className={signUpErrors.passwordLength || signUpErrors.passwordMatch && "error"}
+                        className={(signUpErrors.passwordLength || signUpErrors.passwordMatch) && "error"}
                         type="password"
                         ref={passwordRef}
                         required
@@ -95,7 +94,7 @@ const RegistrationForm = () => {
                 <div className="auth-form-field">
                     <label>Powtórz Hasło</label>
                     <input
-                        className={signUpErrors.passwordLength || signUpErrors.passwordMatch && "error"}
+                        className={(signUpErrors.passwordLength || signUpErrors.passwordMatch) && "error"}
                         type="password"
                         ref={rePasswordRef}
                         required

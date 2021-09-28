@@ -1,4 +1,4 @@
-import {BrowserRouter, Switch} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from "./components/home/Home";
 import LoginPage from "./components/login/LoginPage";
 import RegistrationPage from "./components/registration/RegistrationPage";
@@ -12,16 +12,14 @@ function App() {
       <BrowserRouter>
           <AuthProvider>
               <Switch>
-                  <PublicRoute
+                  <Route
                       exact
                       path="/"
-                      isAuthenticated={false}
                       component={Home}
                   />
                   <PublicRoute
                       exact
                       path="/logowanie"
-                      isAuthenticated={false}
                       component={() => <LoginPage/>}
                   />
                   <PublicRoute

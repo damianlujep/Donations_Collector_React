@@ -6,6 +6,7 @@ import PrivateRoute from "./routers/PrivateRoute";
 import DonationsPage from "./components/donations/DonationsPage";
 import PublicRoute from "./routers/PublicRoute";
 import {AuthProvider} from "./contexts/AuthContext";
+import LogoutPage from "./components/login/LogoutPage";
 
 function App() {
   return (
@@ -21,6 +22,11 @@ function App() {
                       exact
                       path="/logowanie"
                       component={() => <LoginPage/>}
+                  />
+                  <PublicRoute
+                      exact
+                      path="/wylogowano"
+                      component={() => <LogoutPage/>}
                   />
                   <PublicRoute
                       exact

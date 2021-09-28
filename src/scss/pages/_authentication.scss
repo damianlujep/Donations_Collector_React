@@ -73,3 +73,14 @@
   font-size: 11px;
   margin-left: 15px;
 }
+
+.log-out-page-main{
+  @include display-flex-helper(column);
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 75px - 37px - 75px);
+
+  button{
+    margin-top: 55px;
+  }
+}

@@ -12,7 +12,7 @@ const LoggedInActionButtons = () => {
 
         try {
             await logout();
-            history.push("/")
+            history.push("/wylogowano")
         } catch {
             setLogoutError("Nie udało się wylogować");
         }
